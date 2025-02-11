@@ -9,10 +9,11 @@ interface Props {
 		id: number;
 		name: string
 		price: number
+		description: string
 		imageUrl: string
 }
 
-export const ProductCard: React.FC<Props> = ({ className, imageUrl, id, name, price }) => {
+export const ProductCard: React.FC<Props> = ({ className, imageUrl, id, name, price, description }) => {
     return (
         <div className={className}>
 						<Link href={`/product/${id}`}>
@@ -24,7 +25,7 @@ export const ProductCard: React.FC<Props> = ({ className, imageUrl, id, name, pr
 								<Title text={name} size={"sm"} className={'mb-1 mt-3 font-bold'} />
 
 								<p className={'text-sm text-gray-400'}>
-									Цыпленок, моцарелла, сыры цеддер и пармезан, сырный соус, томаты, соус альфредо, чеснок, говнок
+									{description}
 								</p>
 
 								<div className={'flex justify-between items-center mt-4'}>
